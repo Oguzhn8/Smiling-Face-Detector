@@ -22,3 +22,6 @@ The problem will be treated as a two-class classification problem, 'Neutral' and
 Then, eigen vectors and values were found with the help of Singular Value Decomposition. The first 3 eigenfaces obtained with the help of eigen vectors and values can be seen below: <br/>
 ![image](https://user-images.githubusercontent.com/78887209/221897329-06d20138-b0ad-480b-8301-99c6e4259d98.png) <br/>
 As explained in the introduction, the number of principal components required to model 90% of the data variance was determined. And these principal components are used in classification. This saves memory and time. Eigenvectors, which can represent 90% of the data variance, are projected onto the corresponding eigenfaces of each of the neutral and smiling faces. With the help of the coefficients of the projected projection matrix, each face is classified by supervised learning and each face in the data set is correctly classified.
+### Further Readings
+https://en.wikipedia.org/wiki/Eigenface <br/>
+https://www.quora.com/How-are-Eigenvectors-and-Eigenvalues-used-in-image-processing
