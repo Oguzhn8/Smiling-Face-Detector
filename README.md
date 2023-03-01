@@ -14,7 +14,7 @@ The resulting eigenfaces will manifest as a certain arrangement of light and dar
 5- k is the smallest number that satisfies (lambda1, lambda2 , ..., lambda_k)/v > ε  <br/>
 The dataset or alternative datasets to be used for this study can be downloaded from the link below or used by downloading the 'Yale_32x32.mat' file included in the files. <br/>
 Now, we may project a new (mean-subtracted) picture on the eigenfaces and record how that new face differs from the mean face, allowing us to use these eigenfaces to represent both old and new faces. The distances between each eigenface's associated eigenvalue and mean picture in the training set are measured in that direction. By preserving the eigenfaces with the highest eigenvalues, losses are kept to a minimum when the picture is projected on a subset of the eigenvectors. For instance, 10,000 eigenvectors will be generated while working with a 100 100 image. Most of the 10,000 eigenvectors can be deleted in practical applications because most faces can often be recognized using a projection on between 100 and 150 eigenfaces. <br/>
-## Case Study
+## Smiling Face Detector
 In this study, 'Smiling' or 'Neutral' faces, which can be obtained from the link below or from the 'Yale32x32.mat' file, will be classified. <br/>
 LINK : http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html <br/>
 The problem will be treated as a two-class classification problem, 'Neutral' and 'Smiling' faces. Therefore, first of all, the data set was displayed with the help of 'display_faces.m' codes. The 'Neutral' and 'Smiling' markings on the displayed data set can be seen in the 'Labelling the faces' section of the Codes.m file. After labelling, the 'Mean Face' is substract first. The 'Mean Face' of the faces in the dataset can be seen below: <br/>
@@ -22,6 +22,14 @@ The problem will be treated as a two-class classification problem, 'Neutral' and
 Then, eigen vectors and values were found with the help of Singular Value Decomposition. The first 3 eigenfaces obtained with the help of eigen vectors and values can be seen below: <br/>
 ![image](https://user-images.githubusercontent.com/78887209/221897329-06d20138-b0ad-480b-8301-99c6e4259d98.png) <br/>
 As explained in the introduction, the number of principal components required to model 90% of the data variance was determined. And these principal components are used in classification. This saves memory and time. Eigenvectors, which can represent 90% of the data variance, are projected onto the corresponding eigenfaces of each of the neutral and smiling faces. With the help of the coefficients of the projected projection matrix, each face is classified by supervised learning and each face in the data set is correctly classified.
+## Gender Classification
+In the directory you can find 2 folders: training and testing. In each of these you can find two folders: women and men. In the folder women there are pictures of women faces, while in the folder men there are men faces. Each of these images is a 36x36 gray scale image. In this study, a gender classifier will be implemented for facial images using SVD using ideas similar to the above. After the training and test sets were imported into the MATLAB environment, the 'mean face' was examined first. The 'mean face' in the dataset is shown below: <br/>
+![image](https://user-images.githubusercontent.com/78887209/222077523-e2beff0c-ec3d-4da9-b5c9-06f0be533fad.png) <br/>
+Then, eigen vectors and values were found with the help of Singular Value Decomposition. The first 3 eigenfaces obtained with the help of eigen vectors and values can be seen below: <br/>
+![image](https://user-images.githubusercontent.com/78887209/222077811-d8e51f5b-98c5-4739-bf90-5fc605b18c73.png) <br/>
+As explained in the introduction, the number of principal components required to model 90% of the data variance was determined. And these principal components are used in classification. With the help of the coefficients of the projection matrix, each face is classified by supervised learning and each face in the data set is classified with 100% accuracy.
+
+
 ### Further Readings
 https://en.wikipedia.org/wiki/Eigenface <br/>
 https://www.quora.com/How-are-Eigenvectors-and-Eigenvalues-used-in-image-processing
